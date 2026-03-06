@@ -13,12 +13,10 @@ const About: React.FC = () => {
             
             <div className="prose prose-lg text-slate-600 leading-relaxed mb-8">
               <p className="mb-4">
-                Forward-thinking professional with a unique blend of statistical expertise and digital proficiency. 
-                Currently a Training Support Staff at <span className="font-semibold text-slate-900">Hommaston Limited</span>, 
-                managing national-scale capacity building projects like <span className="font-semibold text-slate-900">NCDMB Project 350</span>.
+                Forward-thinking Business Analyst and Training Operations Specialist with expertise in statistics, AI-driven process automation, and digital media strategy.
               </p>
               <p>
-                Final-year Statistics student committed to data-driven decision making.
+                Proven track record of improving efficiency in corporate and educational environments, supporting national-scale capacity-building projects, and translating complex data into actionable insights. Skilled at bridging business strategy, technology, and training operations to deliver measurable results.
               </p>
             </div>
 

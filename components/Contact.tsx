@@ -45,7 +45,13 @@ const Contact: React.FC = () => {
           </div>
 
           <div className="bg-white rounded-2xl p-8 text-slate-900">
-             <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+             <form className="space-y-6" onSubmit={(e) => {
+               e.preventDefault();
+               const name = (document.getElementById('name') as HTMLInputElement).value;
+               const email = (document.getElementById('email') as HTMLInputElement).value;
+               const message = (document.getElementById('message') as HTMLTextAreaElement).value;
+               window.location.href = `mailto:${PERSONAL_INFO.email}?subject=Contact from ${name}&body=${message}%0A%0AFrom: ${name} (${email})`;
+             }}>
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-1">Name</label>
                   <input type="text" id="name" className="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all" placeholder="Your Name" />

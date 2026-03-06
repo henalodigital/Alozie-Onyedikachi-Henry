@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { PERSONAL_INFO } from '../constants';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,7 +40,7 @@ const Navbar: React.FC = () => {
             </a>
           ))}
           <a
-            href="#contact"
+            href={`mailto:${PERSONAL_INFO.email}`}
             className={`px-4 py-2 text-sm font-semibold rounded-md transition-colors ${
               scrolled 
                 ? 'bg-slate-900 text-white hover:bg-slate-800' 
@@ -77,7 +78,7 @@ const Navbar: React.FC = () => {
             </a>
           ))}
           <a
-            href="#contact"
+            href={`mailto:${PERSONAL_INFO.email}`}
             onClick={() => setIsOpen(false)}
             className="px-6 py-2 bg-slate-900 text-white rounded-md font-semibold hover:bg-slate-800"
           >

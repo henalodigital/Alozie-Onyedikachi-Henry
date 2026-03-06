@@ -3,8 +3,8 @@ import { Service, Project, Badge, SocialLink } from "./types";
 
 export const PERSONAL_INFO = {
   name: "ALOZIE ONYEDIKACHI HENRY",
-  headline: "Business Analyst | Training Operations Specialist | Digital Strategist",
-  subHeadline: "Bridging the gap between complex data, corporate training, and operational efficiency.",
+  headline: "Business Analyst | Corporate Training Specialist | Statistician",
+  subHeadline: "Forward-thinking Business Analyst and Training Operations Specialist with expertise in statistics, AI-driven process automation, and digital media strategy. Proven track record of improving efficiency in corporate and educational environments, supporting national-scale capacity-building projects, and translating complex data into actionable insights.",
   email: "henalodigital@gmail.com",
   phone: "+234 808 145 2065",
   copyright: "© 2026 Henalo Digital Enterprise. All rights reserved."
@@ -31,41 +31,41 @@ export const SERVICES: Service[] = [
 export const PROJECTS: Project[] = [
   {
     title: "Digital Tax Automation System",
-    description: "Led a BA team to design a tax filing automation framework, mapping \"As-Is\" and \"To-Be\" processes to improve user adoption."
+    description: "Designed automation framework for tax filings; developed 'As-Is' and 'To-Be' process maps and functional requirements to improve user adoption and efficiency."
   },
   {
     title: "NCDMB Project 350",
-    description: "Coordinated logistics and resource management for a major national capacity-building initiative, ensuring zero downtime for training sessions."
+    description: "Core support for NCDMB Project 350, coordinating daily attendance, resource distribution, and facility setup for large trainee cohorts."
   },
   {
     title: "Science Tech Summit (STS) Publicity",
-    description: "Executed a digital media strategy that increased event participation by 35% through targeted student outreach."
+    description: "Led publicity campaigns, coordinating content creation and outreach that increased event participation by 35%."
   }
 ];
 
 export const SKILLS = [
-  "Microsoft Power BI",
+  "Requirement Gathering",
+  "Process Mapping (BPMN)",
+  "Data Visualization",
+  "Stakeholder Management",
+  "Power BI",
   "SQL",
-  "Excel",
-  "Google Workspace",
-  "Confluence",
-  "BPMN",
   "LMS Administration",
-  "AI Prompt Engineering"
+  "Prompt Engineering"
 ];
 
 export const BADGES: Badge[] = [
-  {
-    title: "Man of the Year",
-    year: "2023",
-    organization: "NASS LASUED",
-    icon: "🏆"
-  },
   {
     title: "Most Outstanding Intern",
     year: "2025",
     organization: "Hommaston Limited",
     icon: "⭐"
+  },
+  {
+    title: "Man of the Year",
+    year: "2023",
+    organization: "NASS LASUED Chapter",
+    icon: "🏆"
   }
 ];
 
