@@ -1,10 +1,10 @@
-import { BarChart3, Workflow, BookOpen, Linkedin, Mail, Phone } from "lucide-react";
-import { Service, Project, Badge, SocialLink } from "./types";
+import { Headphones, Calendar, MessageSquare, ClipboardList, MonitorSmartphone, Mail, BookOpen, Presentation, Linkedin } from "lucide-react";
+import { Service, Project, Experience, Education, Badge, SocialLink } from "./types";
 
 export const PERSONAL_INFO = {
   name: "ALOZIE ONYEDIKACHI HENRY",
-  headline: "Business Analyst | Corporate Training Specialist | Statistician",
-  subHeadline: "Forward-thinking Business Analyst and Training Operations Specialist with expertise in statistics, AI-driven process automation, and digital media strategy. Proven track record of improving efficiency in corporate and educational environments, supporting national-scale capacity-building projects, and translating complex data into actionable insights.",
+  headline: "Customer Support Representative | Virtual Support Specialist | Administrative Coordinator",
+  subHeadline: "Customer-focused support with extensive experience handling inquiries, resolving issues, and managing communication across digital platforms. Organized, responsive, and committed to delivering smooth and positive customer experiences while supporting business operations.",
   email: "henalodigital@gmail.com",
   phone: "+234 808 145 2065",
   copyright: "© 2026 Henalo Digital Enterprise. All rights reserved."
@@ -12,46 +12,94 @@ export const PERSONAL_INFO = {
 
 export const SERVICES: Service[] = [
   {
-    title: "Business Intelligence & Data Visualization",
-    description: "Transforming raw data into clear, actionable insights using Power BI, SQL, and Advanced Excel dashboards.",
-    icon: BarChart3
+    title: "Customer Support (WhatsApp, Phone, Email)",
+    description: "Responding to user inquiries via digital platforms, ensuring timely and professional communication.",
+    icon: Headphones
   },
   {
-    title: "Digital Workflow Automation",
-    description: "Streamlining business operations by integrating AI tools (ChatGPT, Gemini, Gamma AI) and designing efficient process maps (BPMN).",
-    icon: Workflow
+    title: "Complaint Resolution & Escalation",
+    description: "Assisting users with onboarding, account access, and comprehensive issue resolution.",
+    icon: MessageSquare
   },
   {
-    title: "Corporate Training Systems",
-    description: "End-to-end management of Learning Management Systems (LMS), training documentation (CDTS), and virtual logistics for large cohorts.",
-    icon: BookOpen
+    title: "Administrative Coordination",
+    description: "Maintaining accurate records, coordinating processes, and tracking information for program effectiveness.",
+    icon: ClipboardList
   }
 ];
 
-export const PROJECTS: Project[] = [
+export const EXPERIENCES: Experience[] = [
   {
-    title: "Digital Tax Automation System",
-    description: "Designed automation framework for tax filings; developed 'As-Is' and 'To-Be' process maps and functional requirements to improve user adoption and efficiency."
+    role: "TRAINING SUPPORT STAFF",
+    company: "Hommaston Limited | Lagos",
+    date: "Jan 2026 – Present",
+    responsibilities: [
+      "Respond to user inquiries via WhatsApp, email, and digital platforms, ensuring timely and professional communication",
+      "Assist users with onboarding, account access, and comprehensive issue resolution",
+      "Maintain accurate records of interactions and system updates for quality assurance",
+      "Coordinate communication between teams and users to ensure smooth service delivery"
+    ]
   },
   {
-    title: "NCDMB Project 350",
-    description: "Core support for NCDMB Project 350, coordinating daily attendance, resource distribution, and facility setup for large trainee cohorts."
+    role: "TRAINING INTERN (PROJECT SUPPORT)",
+    company: "Hommaston Limited | Lagos",
+    date: "Aug 2025 – Dec 2025",
+    responsibilities: [
+      "Supported participants by addressing inquiries and providing assistance during training sessions",
+      "Assisted in coordinating schedules and ensuring effective communication between stakeholders",
+      "Maintained organized records and tracked participant information for program effectiveness"
+    ]
   },
   {
-    title: "Science Tech Summit (STS) Publicity",
-    description: "Led publicity campaigns, coordinating content creation and outreach that increased event participation by 35%."
+    role: "SPECIAL ADVISER – MEDIA & PUBLICITY",
+    company: "NASS, LASUED",
+    date: "2024 – Present",
+    responsibilities: [
+      "Oversee digital communication strategies and ensure timely dissemination of information",
+      "Support engagement and communication across student platforms and social media channels"
+    ]
+  },
+  {
+    role: "SALES BRANCH MANAGER",
+    company: "Great Lots Nigeria Limited",
+    date: "Sept 2019 – June 2021",
+    responsibilities: [
+      "Managed customer interactions, resolved complaints, and ensured customer satisfaction",
+      "Supervised sales operations and coordinated staff to meet targets and objectives",
+      "Maintained comprehensive sales records and monitored inventory for optimal performance"
+    ]
   }
+];
+
+export const EDUCATION: Education[] = [
+  {
+    degree: "B.Sc. Statistics",
+    institution: "LAGOS STATE UNIVERSITY OF EDUCATION (LASUED)",
+    date: "In Progress"
+  },
+  {
+    degree: "B.Sc. Computer Science",
+    institution: "UNIVERSITY OF THE PEOPLE (ONLINE)",
+    date: "In Progress"
+  }
+];
+
+export const CERTIFICATIONS = [
+  "Google Digital Marketing Certification",
+  "ALX AI Career Essentials",
+  "Data Literacy — DataCamp"
 ];
 
 export const SKILLS = [
-  "Requirement Gathering",
-  "Process Mapping (BPMN)",
-  "Data Visualization",
-  "Stakeholder Management",
-  "Power BI",
-  "SQL",
-  "LMS Administration",
-  "Prompt Engineering"
+  "Customer Support",
+  "Order Processing & Follow-Up",
+  "Complaint Resolution",
+  "Communication & Active Listening",
+  "Data Entry & Record Keeping",
+  "Microsoft Office & Google Workspace",
+  "Time Management & Multitasking",
+  "Remote Work & Team Collaboration",
+  "Digital Communication"
 ];
 
 export const BADGES: Badge[] = [
@@ -64,7 +112,7 @@ export const BADGES: Badge[] = [
   {
     title: "Man of the Year",
     year: "2023",
-    organization: "NASS LASUED Chapter",
+    organization: "NASS LASUED",
     icon: "🏆"
   }
 ];

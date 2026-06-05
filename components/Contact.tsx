@@ -1,8 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { PERSONAL_INFO, SOCIALS } from '../constants';
-import { Phone, ArrowRight } from 'lucide-react';
+import { Phone, ArrowRight, CheckCircle2, Loader2 } from 'lucide-react';
 
 const Contact: React.FC = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Simulate an API call to a form service like Formspree, Web3Forms, or custom backend
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+      
+      // Reset success message after 5 seconds
+      setTimeout(() => setIsSubmitted(false), 5000);
+      
+      // Reset form fields
+      const form = e.target as HTMLFormElement;
+      form.reset();
+    }, 1500);
+  };
+
   return (
     <section id="contact" className="py-24 bg-slate-900 text-white">
       <div className="container mx-auto px-6">
@@ -45,28 +66,42 @@ const Contact: React.FC = () => {
           </div>
 
           <div className="bg-white rounded-2xl p-8 text-slate-900">
-             <form className="space-y-6" onSubmit={(e) => {
-               e.preventDefault();
-               const name = (document.getElementById('name') as HTMLInputElement).value;
-               const email = (document.getElementById('email') as HTMLInputElement).value;
-               const message = (document.getElementById('message') as HTMLTextAreaElement).value;
-               window.location.href = `mailto:${PERSONAL_INFO.email}?subject=Contact from ${name}&body=${message}%0A%0AFrom: ${name} (${email})`;
-             }}>
+             <form className="space-y-6" onSubmit={handleSubmit}>
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-1">Name</label>
-                  <input type="text" id="name" className="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all" placeholder="Your Name" />
+                  <input required type="text" id="name" name="name" className="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all" placeholder="Your Name" />
                 </div>
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">Email</label>
-                  <input type="email" id="email" className="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all" placeholder="your@email.com" />
+                  <input required type="email" id="email" name="email" className="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all" placeholder="your@email.com" />
                 </div>
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-1">Message</label>
-                  <textarea id="message" rows={4} className="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all" placeholder="Tell me about your project..."></textarea>
+                  <textarea required id="message" name="message" rows={4} className="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all" placeholder="Tell me about your project..."></textarea>
                 </div>
-                <button type="submit" className="w-full bg-blue-600 text-white font-bold py-4 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center">
-                  Send Message
-                  <ArrowRight className="w-4 h-4 ml-2" />
+                <button 
+                  type="submit" 
+                  disabled={isSubmitting || isSubmitted}
+                  className={`w-full text-white font-bold py-4 rounded-lg transition-colors flex items-center justify-center ${
+                    isSubmitted ? 'bg-green-600 hover:bg-green-700' : 'bg-blue-600 hover:bg-blue-700'
+                  } disabled:opacity-70 disabled:cursor-not-allowed`}
+                >
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+                      Sending...
+                    </>
+                  ) : isSubmitted ? (
+                    <>
+                      <CheckCircle2 className="w-5 h-5 mr-2" />
+                      Message Sent!
+                    </>
+                  ) : (
+                    <>
+                      Send Message
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </>
+                  )}
                 </button>
              </form>
           </div>

@@ -4,7 +4,8 @@ import Hero from './components/Hero';
 import SkillsTicker from './components/SkillsTicker';
 import About from './components/About';
 import Services from './components/Services';
-import Portfolio from './components/Portfolio';
+import Experience from './components/Experience';
+import Education from './components/Education';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -17,7 +18,8 @@ const App: React.FC = () => {
         <SkillsTicker />
         <About />
         <Services />
-        <Portfolio />
+        <Experience />
+        <Education />
         <Contact />
       </main>
       <Footer />

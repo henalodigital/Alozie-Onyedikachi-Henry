@@ -12,6 +12,19 @@ export interface Project {
   description: string;
 }
 
+export interface Experience {
+  role: string;
+  company: string;
+  date: string;
+  responsibilities: string[];
+}
+
+export interface Education {
+  degree: string;
+  institution: string;
+  date: string;
+}
+
 export interface Badge {
   title: string;
   year: string;
