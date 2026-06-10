@@ -1,61 +1,50 @@
 import React from 'react';
-import { BADGES } from '../constants';
+import { BADGES, CORE_COMPETENCIES, PERSONAL_INFO } from '../constants';
 import { FadeInSection } from './FadeInSection';
+import { CheckCircle2, Award } from 'lucide-react';
 
 const About: React.FC = () => {
   return (
-    <section id="about" className="py-20 bg-white overflow-hidden">
-      <div className="container mx-auto px-6">
-        <FadeInSection className="flex flex-col lg:flex-row gap-16 items-start">
+    <section id="about" className="py-24 bg-white overflow-hidden">
+      <div className="container mx-auto px-6 max-w-6xl">
+        <FadeInSection className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
           
-          <div className="lg:w-2/3">
-            <h2 className="text-sm font-bold text-blue-600 tracking-wider uppercase mb-2">About Me</h2>
-            <h3 className="text-3xl font-bold text-slate-900 mb-6">Customer-Focused Support.</h3>
+          {/* Main Biography Content */}
+          <div className="lg:col-span-7">
+            <h2 className="text-sm font-bold text-blue-600 tracking-wider uppercase mb-2">Who I Am</h2>
+            <h3 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6 leading-tight">
+              Bridging Operational Strategy, Technology, and Training.
+            </h3>
             
-            <div className="prose prose-lg text-slate-600 leading-relaxed mb-8">
+            <div className="prose prose-slate text-slate-600 md:text-base leading-relaxed mb-8 text-justify">
               <p className="mb-4">
-                Customer-focused support with extensive experience handling inquiries, resolving issues, and managing communication across digital platforms including WhatsApp, email, and online systems.
+                Innovative Digital Operations Specialist and AI Implementation Strategist with a strong foundation in digital skills, front-end development, and business analysis. Highly proficient in leveraging versatile artificial intelligence tools and advanced prompt engineering to automate complex workflows, design dynamic web environments, and scale office productivity.
               </p>
-              <p>
-                Skilled in maintaining accurate records, coordinating processes, and ensuring timely responses in fast-paced environments. Organized, responsive, and committed to delivering smooth and positive customer experiences while supporting business operations and team collaboration.
+              <p className="mb-4">
+                Experienced in coordinating technical training programs, managing complex stakeholder communications, and leading high-profile technology summits. Recognized for a hands-on approach to problem-solving, utilizing AI-assisted technologies to maneuver operational challenges, optimize executive profiles, and deliver rapid, end-to-end digital solutions—from initial UI/UX design to live deployment.
               </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {BADGES.map((badge, index) => (
-                <div key={index} className="flex items-center p-4 bg-slate-50 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
-                  <span className="text-3xl mr-4">{badge.icon}</span>
-                  <div>
-                    <h4 className="font-bold text-slate-900">{badge.title}</h4>
-                    <p className="text-sm text-slate-500">{badge.year} • {badge.organization}</p>
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
 
-          <div className="lg:w-1/3 w-full">
-            <div className="bg-slate-900 p-8 rounded-2xl text-white relative overflow-hidden">
-               <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500 rounded-full blur-3xl opacity-20 -mr-10 -mt-10"></div>
-               <h3 className="text-xl font-bold mb-6 relative z-10">Core Competencies</h3>
-               <ul className="space-y-4 relative z-10">
-                 <li className="flex items-center space-x-3">
-                   <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                   <span className="text-slate-300">Customer Support</span>
-                 </li>
-                 <li className="flex items-center space-x-3">
-                   <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                   <span className="text-slate-300">Complaint Resolution</span>
-                 </li>
-                 <li className="flex items-center space-x-3">
-                   <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                   <span className="text-slate-300">Data Entry & Tracking</span>
-                 </li>
-                 <li className="flex items-center space-x-3">
-                   <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                   <span className="text-slate-300">Digital Communication</span>
-                 </li>
-               </ul>
+          {/* Competency Card with Bullet Tags */}
+          <div className="lg:col-span-5 w-full">
+            <div className="bg-slate-950 p-8 md:p-10 rounded-3xl text-white relative overflow-hidden shadow-2xl border border-slate-900">
+              <div className="absolute top-0 right-0 w-44 h-44 bg-blue-500 rounded-full blur-3xl opacity-10 -mr-16 -mt-16"></div>
+              <div className="absolute bottom-0 left-0 w-32 h-32 bg-teal-400 rounded-full blur-3xl opacity-10 -ml-10 -mb-10"></div>
+              
+              <h3 className="text-xl font-bold mb-6 relative z-10 text-white flex items-center">
+                <span className="w-2.5 h-2.5 bg-blue-400 rounded-full mr-2"></span>
+                Core Competencies
+              </h3>
+              
+              <div className="flex flex-col gap-3 relative z-10">
+                {CORE_COMPETENCIES.map((comp, idx) => (
+                  <div key={idx} className="flex items-start space-x-3 bg-slate-900 px-4 py-3 rounded-xl border border-slate-850 hover:bg-slate-850 transition-colors">
+                    <CheckCircle2 className="w-4 h-4 text-blue-400 mt-1 flex-shrink-0" />
+                    <span className="text-sm font-medium text-slate-200">{comp}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 

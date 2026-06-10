@@ -8,9 +8,9 @@ const Services: React.FC = () => {
       <div className="container mx-auto px-6">
         <FadeInSection>
           <div className="text-center mb-16 max-w-2xl mx-auto">
-            <h2 className="text-sm font-bold text-blue-600 tracking-wider uppercase mb-2">What I Do</h2>
+            <h2 className="text-sm font-bold text-blue-600 tracking-wider uppercase mb-2">My Service Blueprint</h2>
             <h3 className="text-3xl font-bold text-slate-900">Core Expertise</h3>
-            <p className="mt-4 text-slate-600">Delivering value through proactive communication, documentation, and tailored support.</p>
+            <p className="mt-4 text-slate-600">Delivering peak organizational and digital value through tailored modern systems.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -19,14 +19,14 @@ const Services: React.FC = () => {
               return (
                 <div 
                   key={index} 
-                  className="group p-8 bg-slate-50 rounded-2xl border border-slate-100 hover:border-blue-200 hover:bg-white hover:shadow-xl transition-all duration-300"
+                  className="p-8 bg-white rounded-2xl border border-blue-100 hover:border-blue-400 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col items-start"
                 >
-                  <div className="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <Icon className="w-7 h-7 text-blue-600 group-hover:animate-subtle-bounce" />
+                  <div className="w-12 h-12 bg-blue-50/80 rounded-xl flex items-center justify-center mb-6 text-blue-600">
+                    <Icon className="w-6 h-6" />
                   </div>
                   <h4 className="text-xl font-bold text-slate-900 mb-3">{service.title}</h4>
                   <p className="text-slate-600 leading-relaxed text-sm">
-                     {service.description}
+                    {service.description}
                   </p>
                 </div>
               );
