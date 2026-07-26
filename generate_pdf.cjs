@@ -6,7 +6,7 @@ doc.pipe(fs.createWriteStream('public/Alozie_Onyedikachi_Henry_CV.pdf'));
 
 // Header Area
 doc.fontSize(22).font('Helvetica-Bold').text('ALOZIE, ONYEDIKACHI HENRY', { align: 'center' });
-doc.fontSize(11).font('Helvetica-Oblique').text('Digital Operations Specialist | AI Implementation Strategist | Project Coordinator', { align: 'center' });
+doc.fontSize(11).font('Helvetica-Oblique').text('Highly Organized Virtual Assistant | AI Implementation Strategist | Project Coordinator', { align: 'center' });
 doc.moveDown(0.5);
 doc.fontSize(9).font('Helvetica').text('Lagos, Nigeria | +234 808 145 2065, +234 902 645 0406 | henalodigital@gmail.com | linkedin.com/in/henalodigital', { align: 'center' });
 doc.moveDown();
@@ -24,15 +24,17 @@ doc.moveDown();
 doc.fontSize(12).font('Helvetica-Bold').text('CORE COMPETENCIES', { underline: true });
 doc.moveDown(0.3);
 const competencies = [
-  '• AI-Assisted Operations & Workflow Automation',
-  '• Front-End Web Development & Deployment',
+  '• Virtual Assistance & Remote Operations',
+  '• AI Tools: ChatGPT, Gemini, M365 & Copilot',
+  '• Calendar, Inbox & CRM Management',
+  '• Spreadsheet Maintenance & Data Entry',
+  '• AI-Assisted Workflow Automation',
+  '• Front-End Web Development (Vercel)',
   '• Advanced Prompt Engineering & Digital Design',
   '• Executive CV & Portfolio Optimization',
   '• Project Management & Training Coordination',
   '• Business Analysis & Digital Workflows',
   '• Digital Communication Strategies',
-  '• Complaint Resolution & Escalation',
-  '• Remote Work & Team Collaboration',
   '• Time Management & Multitasking'
 ];
 doc.fontSize(9.5).font('Helvetica');
@@ -52,9 +54,10 @@ doc.fontSize(10.5).font('Helvetica-Bold').text('Freelance Digital Consultant / F
 doc.font('Helvetica').text(' | Henalo Digital Enterprise', { continued: true });
 doc.font('Helvetica-Bold').text(' (Nov 2025 – Present)');
 doc.fontSize(9).font('Helvetica').text(
-  '• Develop and deploy professional portfolio websites for industry clients and executives, managing the full development lifecycle from AI-assisted design to live online hosting.\n' +
-  '• Optimize executive CVs, branding documents, and professional portfolios, successfully helping clients secure actionable career results and improve market visibility.\n' +
-  '• Leverage diverse AI toolsets and advanced prompting techniques for rapid administrative scaling, high-quality content generation, and seamless digital project execution.',
+  '• Develop and deploy professional portfolio websites for industry clients and executives, managing the full development lifecycle from AI-assisted design to live hosting on Vercel.\n' +
+  '• Provide comprehensive virtual assistant services including calendar management, inbox management, CRM updates, and spreadsheet maintenance for remote clients across multiple industries.\n' +
+  '• Leverage AI tools including ChatGPT, Gemini, and Microsoft 365 (M365) for rapid administrative scaling, high-quality content generation, and seamless digital project execution.\n' +
+  '• Optimize executive CVs, branding documents, and professional portfolios, successfully helping clients secure actionable career results and improve market visibility.',
   { lineGap: 1.5 }
 );
 doc.moveDown(0.8);
@@ -64,10 +67,10 @@ doc.fontSize(10.5).font('Helvetica-Bold').text('Training Support Staff', { conti
 doc.font('Helvetica').text(' | Hommaston Limited, Lagos', { continued: true });
 doc.font('Helvetica-Bold').text(' (Jan 2026 – Present)');
 doc.fontSize(9).font('Helvetica').text(
-  '• Conducted a comprehensive department-by-department AI needs assessment for a team of 23 staff members to develop a 90-day strategic rollout plan for digital efficiency.\n' +
-  '• Coordinate complex communication between cross-functional teams and users to ensure smooth service delivery and seamless onboarding processes.\n' +
-  '• Respond to and resolve technical and administrative inquiries via digital platforms, maintaining high-quality responsiveness and strict user satisfaction standards.\n' +
-  '• Maintain accurate operational records and system updates, ensuring complete quality assurance and data integrity.',
+  '• Conducted a comprehensive department-by-department AI needs assessment for a team of 23 staff members to develop a 90-day strategic rollout plan for digital efficiency using ChatGPT and M365 Copilot.\n' +
+  '• Manage executive calendars, coordinate meeting schedules, and maintain organized digital filing systems to ensure seamless daily operations.\n' +
+  '• Handle inbox management and coordinate complex communication between cross-functional teams and users to ensure smooth service delivery and seamless onboarding processes.\n' +
+  '• Maintain accurate CRM records, operational databases, and system updates, ensuring complete quality assurance and data integrity.',
   { lineGap: 1.5 }
 );
 doc.moveDown(0.8);
@@ -78,9 +81,8 @@ doc.font('Helvetica').text(' | Hommaston Limited, Lagos', { continued: true });
 doc.font('Helvetica-Bold').text(' (Aug 2025 – Dec 2025)');
 doc.fontSize(9).font('Helvetica').text(
   '• Served as the program lead in Lagos for the "NCDMB Project 350," ensuring seamless execution, logistical coordination, and stakeholder alignment.\n' +
-  '• Assisted in managing complex schedules and ensuring highly effective communication between key executives and program participants.\n' +
-  '• Maintained organized, data-driven records and tracked participant information to measure and report on program effectiveness.\n' +
-  '• Awarded "Most Outstanding Intern" for exceptional operational support and issue resolution.',
+  '• Managed complex executive schedules, coordinated meeting logistics, and maintained organized spreadsheet-based tracking systems for participant data and program milestones.\n' +
+  '• Maintained organized, data-driven records and tracked participant information to measure and report on program effectiveness.',
   { lineGap: 1.5 }
 );
 doc.moveDown(0.8);
@@ -125,7 +127,7 @@ doc.moveDown(0.3);
 doc.fontSize(9.5).font('Helvetica-Bold').text('Digital Tax Workflow Automation');
 doc.fontSize(9).font('Helvetica').text('• Created a comprehensive digital tax workflow with an assigned team as part of a rigorous group assignment for a Business Analytics certification.');
 doc.fontSize(9.5).font('Helvetica-Bold').text('"Life After School" Program');
-doc.fontSize(9).font('Helvetica').text('• Served on the organizing team to design, coordinate, and execute a high-impact university-wide career preparation program (June 2026).');
+doc.fontSize(9).font('Helvetica').text('• Led and executed a high-impact university-wide career preparation program (June 2026) that successfully equipped graduating students with practical career skills, professional networking strategies, and workplace readiness tools. The program was delivered on schedule and received strong positive feedback from participants and faculty.');
 doc.fontSize(9.5).font('Helvetica-Bold').text('Educational Planning in Tertiary Institutions');
 doc.fontSize(9).font('Helvetica').text('• Developed a statistical framework applying Moving Average methods for accurate student enrollment forecasting.');
 doc.moveDown();
@@ -147,8 +149,8 @@ doc.moveDown();
 // Education
 doc.fontSize(12).font('Helvetica-Bold').text('EDUCATION', { underline: true });
 doc.moveDown(0.3);
-doc.fontSize(9.5).text('• Bachelor of Science (B.Sc.) – Computer Science | University of the People (Online) | In Progress');
-doc.text('• Bachelor of Science (B.Sc.) – Statistics | Lagos State University of Education (LASUED) | In Progress');
+doc.fontSize(9.5).text('• Bachelor of Science (B.Sc.) – Business Administration | University of the People (Online) | In Progress');
+doc.text('• Bachelor of Science (B.Sc.) – Statistics | Lagos State University of Education (LASUED)');
 doc.moveDown();
 
 // Certifications & Awards

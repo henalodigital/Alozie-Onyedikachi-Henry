@@ -9,8 +9,8 @@ export interface ProjectHeader {
 
 export const PERSONAL_INFO = {
   name: "ALOZIE ONYEDIKACHI HENRY",
-  headline: "Digital Operations Specialist | AI Implementation Strategist | Project Coordinator",
-  subHeadline: "Accelerating productivity by combining operational strategy with AI-assisted automation to optimize workflows, build dynamic web environments, and deliver rapid, end-to-end digital solutions.",
+  headline: "Highly Organized Virtual Assistant | AI Implementation Strategist | Project Coordinator",
+  subHeadline: "Highly organized and results-driven Virtual Assistant and AI Implementation Strategist with a strong foundation in digital operations, front-end development, and business analysis. Highly proficient in leveraging AI tools — including ChatGPT, Gemini, Microsoft 365 (M365), and Copilot — to automate complex workflows, streamline administrative processes, design dynamic web environments, and scale office productivity. Experienced in providing comprehensive virtual assistance including calendar management, inbox management, CRM system administration, and spreadsheet maintenance. Skilled at coordinating technical training programs, managing complex stakeholder communications, and leading high-profile technology summits. Recognized for a hands-on approach to problem-solving, delivering rapid, end-to-end digital solutions — from initial UI/UX design to live deployment.",
   email: "henalodigital@gmail.com",
   phone: "+234 808 145 2065, 0902 6450 406",
   linkedin: "linkedin.com/in/henalodigital",
@@ -38,15 +38,17 @@ export const SERVICES: Service[] = [
 
 // Core Competencies Bullet Tags
 export const CORE_COMPETENCIES = [
-  "AI-Assisted Operations & Workflow Automation",
-  "Front-End Web Development & Deployment",
+  "Virtual Assistance & Remote Operations",
+  "Calendar, Inbox & CRM Management",
+  "AI-Assisted Workflow Automation",
   "Advanced Prompt Engineering & Digital Design",
-  "Executive CV & Portfolio Optimization",
-  "Digital Communication Strategies",
-  "Business Analysis & Digital Workflows",
   "Project Management & Training Coordination",
-  "Complaint Resolution & Escalation",
-  "Remote Work & Team Collaboration",
+  "Digital Communication Strategies",
+  "AI Tools: ChatGPT, Gemini, M365 & Copilot",
+  "Spreadsheet Maintenance & Data Entry",
+  "Front-End Web Development (Vercel)",
+  "Executive CV & Portfolio Optimization",
+  "Business Analysis & Digital Workflows",
   "Time Management & Multitasking"
 ];
 
@@ -58,8 +60,9 @@ export const EXPERIENCES: Experience[] = [
     date: "Nov 2025 – Present",
     responsibilities: [
       "Develop and deploy professional portfolio websites for industry clients and executives, managing the full development lifecycle from AI-assisted design to live online hosting.",
-      "Optimize executive CVs, branding documents, and professional portfolios, successfully helping clients secure actionable career results and improve market visibility.",
-      "Leverage diverse AI toolsets and advanced prompting techniques for rapid administrative scaling, high-quality content generation, and seamless digital project execution."
+      "Provide comprehensive virtual assistant services including calendar management, inbox management, CRM updates, and spreadsheet maintenance for remote clients across multiple industries.",
+      "Leverage AI tools including ChatGPT, Gemini, and Microsoft 365 (M365) for rapid administrative scaling, high-quality content generation, and seamless digital project execution.",
+      "Optimize executive CVs, branding documents, and professional portfolios, successfully helping clients secure actionable career results and improve market visibility."
     ]
   },
   {
@@ -67,10 +70,10 @@ export const EXPERIENCES: Experience[] = [
     company: "Hommaston Limited | Lagos",
     date: "Jan 2026 – Present",
     responsibilities: [
-      "Conducted a comprehensive department-by-department AI needs assessment for a team of 23 staff members to develop a 90-day strategic rollout plan for digital efficiency.",
-      "Coordinate complex communication between cross-functional teams and users to ensure smooth service delivery and seamless onboarding processes.",
-      "Respond to and resolve technical and administrative inquiries via digital platforms, maintaining high-quality responsiveness and strict user satisfaction standards.",
-      "Maintain accurate operational records and system updates, ensuring complete quality assurance and data integrity."
+      "Conducted a comprehensive department-by-department AI needs assessment for a team of 23 staff members to develop a 90-day strategic rollout plan for digital efficiency using ChatGPT and M365 Copilot.",
+      "Manage executive calendars, coordinate meeting schedules, and maintain organized digital filing systems to ensure seamless daily operations.",
+      "Handle inbox management and coordinate complex communication between cross-functional teams and users to ensure smooth service delivery and seamless onboarding processes.",
+      "Maintain accurate CRM records, operational databases, and system updates, ensuring complete quality assurance and data integrity."
     ]
   },
   {
@@ -180,14 +183,14 @@ export const LEADERSHIP = [
 // Education
 export const EDUCATION: Education[] = [
   {
-    degree: "Bachelor of Science (B.Sc.) – Computer Science",
+    degree: "Bachelor of Science (B.Sc.) – Business Administration",
     institution: "University of the People (Online)",
     date: "In Progress"
   },
   {
     degree: "Bachelor of Science (B.Sc.) – Statistics",
     institution: "Lagos State University of Education (LASUED)",
-    date: "In Progress"
+    date: ""
   }
 ];
 
