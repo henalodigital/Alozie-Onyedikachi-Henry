@@ -1,95 +1,55 @@
 import React from 'react';
-import { Target, Briefcase, Users } from 'lucide-react';
+import { KEY_METRICS } from '../constants';
 import { FadeInSection } from './FadeInSection';
-import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
+import { Award, TrendingUp, Users, Cpu, Globe, CheckCircle2 } from 'lucide-react';
 
-const Counter = ({ end, suffix = "", duration = 2000 }: { end: number, suffix?: string, duration?: number }) => {
-  const [count, setCount] = React.useState(0);
-  const [ref, isVisible] = useIntersectionObserver({ threshold: 0.1, freezeOnceVisible: true });
-
-  React.useEffect(() => {
-    if (!isVisible) return;
-    
-    let startTime: number | null = null;
-    let animationFrameId: number;
-
-    const animate = (timestamp: number) => {
-      if (!startTime) startTime = timestamp;
-      const progress = timestamp - startTime;
-      const percentage = Math.min(progress / duration, 1);
-      
-      // easeOutExpo function for smooth deceleration
-      const easePercentage = percentage === 1 ? 1 : 1 - Math.pow(2, -10 * percentage);
-      
-      setCount(Math.floor(end * easePercentage));
-      
-      if (percentage < 1) {
-        animationFrameId = requestAnimationFrame(animate);
-      }
-    };
-    
-    animationFrameId = requestAnimationFrame(animate);
-
-    return () => cancelAnimationFrame(animationFrameId);
-  }, [isVisible, end, duration]);
-
-  return (
-    <span ref={ref} className="tabular-nums">
-      {count}{suffix}
-    </span>
-  );
-};
+const icons = [Users, Cpu, Users, TrendingUp, Globe, Award];
 
 const KeyAchievements: React.FC = () => {
-  const achievements = [
-    {
-      title: "Projects Led",
-      value: 12,
-      suffix: "+",
-      icon: Target,
-      description: "Successfully delivered operational & digital projects"
-    },
-    {
-      title: "Years of Experience",
-      value: 7,
-      suffix: "+",
-      icon: Briefcase,
-      description: "Professional background in sales, operations & tech"
-    },
-    {
-      title: "Clients Served",
-      value: 50,
-      suffix: "+",
-      icon: Users,
-      description: "Including stakeholders, executives, and organizations"
-    }
-  ];
-
   return (
-    <section className="py-20 bg-blue-600 text-white overflow-hidden relative">
-      {/* Background decorations */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-white opacity-[0.05] rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-teal-300 opacity-20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/4"></div>
-      
-      <div className="container mx-auto px-6 max-w-6xl relative z-10">
+    <section className="py-16 bg-white border-y border-[#DCE4EA]">
+      <div className="container mx-auto px-6 max-w-7xl">
         <FadeInSection>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 divide-y md:divide-y-0 md:divide-x divide-blue-400">
-            {achievements.map((item, index) => {
-              const Icon = item.icon;
+          <div className="mb-10 text-center max-w-2xl mx-auto">
+            <h2 className="text-xs font-bold text-[#167D75] uppercase tracking-wider mb-2">
+              Verified Evidence & Impact
+            </h2>
+            <h3 className="font-display text-2xl sm:text-3xl font-bold text-[#102A43]">
+              Career Highlights & Operational Milestones
+            </h3>
+            <p className="text-sm text-[#627D98] mt-2">
+              Quantifiable responsibilities and verified contributions across corporate training, student leadership, and client engagements.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {KEY_METRICS.map((metric, idx) => {
+              const IconComponent = icons[idx % icons.length];
               return (
-                <div key={index} className="flex flex-col items-center text-center pt-8 md:pt-0 pb-2 md:pb-0 px-4 group">
-                  <div className="w-14 h-14 bg-blue-500 rounded-2xl flex items-center justify-center mb-6 shadow-inner group-hover:scale-110 group-hover:bg-teal-400 transition-all duration-300">
-                    <Icon className="w-7 h-7 text-white" />
+                <div
+                  key={idx}
+                  className="bg-[#F2F5F8] border border-[#DCE4EA] rounded-xl p-6 hover:border-[#167D75] hover:shadow-md transition-all duration-200 flex flex-col justify-between"
+                >
+                  <div>
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="font-display text-3xl sm:text-4xl font-extrabold text-[#102A43] tracking-tight">
+                        {metric.value}
+                      </span>
+                      <div className="w-10 h-10 rounded-lg bg-white border border-[#DCE4EA] flex items-center justify-center text-[#167D75]">
+                        <IconComponent className="w-5 h-5" />
+                      </div>
+                    </div>
+                    <h4 className="text-base font-bold text-[#102A43] mb-2">
+                      {metric.label}
+                    </h4>
+                    <p className="text-xs text-[#263746]/80 leading-relaxed">
+                      {metric.context}
+                    </p>
                   </div>
-                  <h4 className="text-4xl md:text-5xl font-extrabold mb-2 tracking-tight">
-                    <Counter end={item.value} suffix={item.suffix} />
-                  </h4>
-                  <p className="text-lg font-bold uppercase tracking-wider text-blue-100 mb-2">
-                    {item.title}
-                  </p>
-                  <p className="text-sm text-blue-200">
-                    {item.description}
-                  </p>
+                  <div className="mt-4 pt-3 border-t border-[#DCE4EA]/70 flex items-center text-[11px] font-medium text-[#167D75]">
+                    <CheckCircle2 className="w-3.5 h-3.5 mr-1 flex-shrink-0" />
+                    <span>Documented in Master CV</span>
+                  </div>
                 </div>
               );
             })}

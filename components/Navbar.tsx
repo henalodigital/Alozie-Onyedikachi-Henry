@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Download, ArrowUpRight } from 'lucide-react';
 import { PERSONAL_INFO } from '../constants';
 
 const Navbar: React.FC = () => {
@@ -16,78 +16,118 @@ const Navbar: React.FC = () => {
 
   const navLinks = [
     { name: 'About', href: '#about' },
-    { name: 'Expertise', href: '#services' },
+    { name: 'Case Studies', href: '#projects' },
     { name: 'Experience', href: '#experience' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Education', href: '#education' },
+    { name: 'Skills & Tools', href: '#skills' },
+    { name: 'Henalo Digital', href: '#henalo-digital' },
+    { name: 'Contact', href: '#contact' },
   ];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md py-4' : 'bg-slate-900/95 backdrop-blur-sm py-6'}`}>
-      <div className="container mx-auto px-6 flex justify-between items-center">
-        <a href="#" className={`text-xl font-bold tracking-tighter ${scrolled ? 'text-slate-900' : 'text-white'}`}>
-          HENALO<span className="text-blue-500">DIGITAL</span>
-        </a>
-
-        {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className={`text-sm font-medium transition-colors hover:text-blue-500 ${scrolled ? 'text-slate-600' : 'text-slate-300'}`}
-            >
-              {link.name}
-            </a>
-          ))}
+    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+      <nav
+        aria-label="Main Navigation"
+        className={`w-full transition-all duration-300 ${
+          scrolled
+            ? 'bg-[#102A43]/95 backdrop-blur-md shadow-md py-3.5 border-b border-[#244D76]'
+            : 'bg-[#102A43] py-5 border-b border-[#1A3B5C]/60'
+        }`}
+      >
+        <div className="container mx-auto px-6 max-w-7xl flex items-center justify-between">
+          {/* Brand Identity */}
           <a
-            href={`mailto:${PERSONAL_INFO.email}`}
-            className={`px-4 py-2 text-sm font-semibold rounded-md transition-colors ${
-              scrolled 
-                ? 'bg-slate-900 text-white hover:bg-slate-800' 
-                : 'bg-white text-slate-900 hover:bg-slate-100'
-            }`}
+            href="#home"
+            className="flex flex-col group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-400 rounded-sm"
           >
-            Hire Me
+            <span className="font-display font-extrabold text-white text-lg tracking-tight group-hover:text-teal-400 transition-colors">
+              Alozie Onyedikachi Henry
+            </span>
+            <span className="text-[11px] font-medium text-slate-300 tracking-wider uppercase">
+              Operations · Coordination · Digital
+            </span>
           </a>
+
+          {/* Desktop Navigation Links */}
+          <div className="hidden lg:flex items-center space-x-7">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className="text-sm font-medium text-slate-200 hover:text-white transition-colors relative py-1 hover:border-b-2 hover:border-[#167D75] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-400"
+              >
+                {link.name}
+              </a>
+            ))}
+          </div>
+
+          {/* Desktop Action Buttons */}
+          <div className="hidden lg:flex items-center space-x-3">
+            <a
+              href={PERSONAL_INFO.cvUrl}
+              download="Alozie_Onyedikachi_Henry_CV.pdf"
+              className="inline-flex items-center text-xs font-semibold px-3.5 py-2 rounded-lg border border-[#33618D] text-slate-200 hover:bg-[#1A3B5C] hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-400"
+            >
+              <Download className="w-3.5 h-3.5 mr-1.5 text-teal-400" />
+              Download CV
+            </a>
+            <a
+              href="#contact"
+              className="inline-flex items-center text-xs font-bold px-4 py-2 rounded-lg bg-[#167D75] text-white hover:bg-[#126B64] transition-colors shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+            >
+              Get in Touch
+              <ArrowUpRight className="w-3.5 h-3.5 ml-1" />
+            </a>
+          </div>
+
+          {/* Mobile Menu Toggle */}
+          <button
+            type="button"
+            className="lg:hidden p-2 text-slate-200 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-400"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-expanded={isOpen}
+          >
+            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
         </div>
 
-        {/* Mobile Menu Button */}
-        <button 
-          className="md:hidden focus:outline-none"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? (
-            <X className={scrolled ? 'text-slate-900' : 'text-white'} />
-          ) : (
-            <Menu className={scrolled ? 'text-slate-900' : 'text-white'} />
-          )}
-        </button>
-      </div>
-
-      {/* Mobile Menu Dropdown */}
-      {isOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-white border-b border-slate-100 shadow-xl py-4 flex flex-col items-center space-y-4">
-           {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              onClick={() => setIsOpen(false)}
-              className="text-slate-600 font-medium hover:text-blue-600"
-            >
-              {link.name}
-            </a>
-          ))}
-          <a
-            href={`mailto:${PERSONAL_INFO.email}`}
-            onClick={() => setIsOpen(false)}
-            className="px-6 py-2 bg-slate-900 text-white rounded-md font-semibold hover:bg-slate-800"
-          >
-            Hire Me
-          </a>
-        </div>
-      )}
-    </nav>
+        {/* Mobile Dropdown Drawer */}
+        {isOpen && (
+          <div className="lg:hidden bg-[#102A43] border-b border-[#244D76] px-6 py-5 shadow-2xl animate-in slide-in-from-top-2 duration-200">
+            <div className="flex flex-col space-y-4">
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className="text-sm font-medium text-slate-200 hover:text-white py-1.5 border-b border-[#1A3B5C]/50"
+                >
+                  {link.name}
+                </a>
+              ))}
+              <div className="pt-2 flex flex-col gap-2.5">
+                <a
+                  href={PERSONAL_INFO.cvUrl}
+                  download="Alozie_Onyedikachi_Henry_CV.pdf"
+                  className="flex items-center justify-center text-xs font-semibold py-2.5 rounded-lg border border-[#33618D] text-slate-200"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <Download className="w-4 h-4 mr-2 text-teal-400" />
+                  Download Master CV
+                </a>
+                <a
+                  href="#contact"
+                  className="flex items-center justify-center text-xs font-bold py-2.5 rounded-lg bg-[#167D75] text-white"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Work With Me / Enquire
+                </a>
+              </div>
+            </div>
+          </div>
+        )}
+      </nav>
+    </header>
   );
 };
 

@@ -1,33 +1,33 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import SkillsTicker from './components/SkillsTicker';
-import About from './components/About';
-import Services from './components/Services';
 import KeyAchievements from './components/KeyAchievements';
-import Experience from './components/Experience';
+import About from './components/About';
 import Projects from './components/Projects';
+import Experience from './components/Experience';
+import Skills from './components/Skills';
+import HenaloDigital from './components/HenaloDigital';
 import Awards from './components/Awards';
-import Testimonials from './components/Testimonials';
 import Education from './components/Education';
+import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 const App: React.FC = () => {
   return (
-    <div className="font-sans text-slate-800 bg-white">
+    <div className="font-sans text-[#263746] bg-[#F2F5F8] min-h-screen flex flex-col selection:bg-[#167D75] selection:text-white">
       <Navbar />
-      <main>
+      <main className="flex-grow">
         <Hero />
-        <SkillsTicker />
-        <About />
-        <Services />
         <KeyAchievements />
-        <Experience />
+        <About />
         <Projects />
+        <Experience />
+        <Skills />
+        <HenaloDigital />
         <Awards />
-        <Testimonials />
         <Education />
+        <Testimonials />
         <Contact />
       </main>
       <Footer />

@@ -5,17 +5,18 @@ const doc = new PDFDocument({ margin: 40 });
 doc.pipe(fs.createWriteStream('public/Alozie_Onyedikachi_Henry_CV.pdf'));
 
 // Header Area
-doc.fontSize(22).font('Helvetica-Bold').text('ALOZIE, ONYEDIKACHI HENRY', { align: 'center' });
-doc.fontSize(11).font('Helvetica-Oblique').text('Highly Organized Virtual Assistant | AI Implementation Strategist | Project Coordinator', { align: 'center' });
-doc.moveDown(0.5);
-doc.fontSize(9).font('Helvetica').text('Lagos, Nigeria | +234 808 145 2065, +234 902 645 0406 | henalodigital@gmail.com | linkedin.com/in/henalodigital', { align: 'center' });
+doc.fontSize(20).font('Helvetica-Bold').text('ALOZIE ONYEDIKACHI HENRY', { align: 'center' });
+doc.fontSize(11).font('Helvetica-Bold').text('Business Operations • Programme Coordination • Data & Digital Solutions', { align: 'center' });
+doc.moveDown(0.4);
+doc.fontSize(9).font('Helvetica').text('Lagos, Nigeria | +234 808 145 2065 | henalodigital@gmail.com | https://linkedin.com/in/henryalozie', { align: 'center' });
+doc.fontSize(8.5).font('Helvetica-Oblique').text('alozie-onyedikachi-henry.vercel.app', { align: 'center' });
 doc.moveDown();
 
-// Professional Profile
-doc.fontSize(12).font('Helvetica-Bold').text('PROFESSIONAL PROFILE', { underline: true });
+// Professional Summary
+doc.fontSize(12).font('Helvetica-Bold').text('PROFESSIONAL SUMMARY', { underline: true });
 doc.moveDown(0.3);
-doc.fontSize(9.5).font('Helvetica').text(
-  'Innovative Digital Operations Specialist and AI Implementation Strategist with a strong foundation in digital skills, front-end development, and business analysis. Highly proficient in leveraging versatile artificial intelligence tools and advanced prompt engineering to automate complex workflows, design dynamic web environments, and scale office productivity. Experienced in coordinating technical training programs, managing complex stakeholder communications, and leading high-profile technology summits. Recognized for a hands-on approach to problem-solving, utilizing AI-assisted technologies to maneuver operational challenges, optimize executive profiles, and deliver rapid, end-to-end digital solutions — from initial UI/UX design to live deployment.',
+doc.fontSize(9).font('Helvetica').text(
+  'Business operations and programme coordination professional with experience in training delivery, stakeholder engagement, customer service, business administration, data analysis and digital consulting. Has contributed to more than 100 training sessions or programmes, with experience in participant onboarding, LMS administration, assessments, logistics, reporting and operational documentation.\n\nCombines a Statistics background with hands-on skills in Microsoft Excel, Google Workspace, Microsoft 365, SPSS, R, Power BI (basic), AI productivity tools and website deployment. Recognised as Most Outstanding Intern in 2025 before transitioning to full-time employment.',
   { align: 'justify', lineGap: 2 }
 );
 doc.moveDown();
@@ -24,22 +25,24 @@ doc.moveDown();
 doc.fontSize(12).font('Helvetica-Bold').text('CORE COMPETENCIES', { underline: true });
 doc.moveDown(0.3);
 const competencies = [
-  '• Virtual Assistance & Remote Operations',
-  '• AI Tools: ChatGPT, Gemini, M365 & Copilot',
-  '• Calendar, Inbox & CRM Management',
-  '• Spreadsheet Maintenance & Data Entry',
-  '• AI-Assisted Workflow Automation',
-  '• Front-End Web Development (Vercel)',
-  '• Advanced Prompt Engineering & Digital Design',
-  '• Executive CV & Portfolio Optimization',
-  '• Project Management & Training Coordination',
-  '• Business Analysis & Digital Workflows',
-  '• Digital Communication Strategies',
-  '• Time Management & Multitasking'
+  '• Business Operations',
+  '• Programme & Project Coordination',
+  '• Training Operations',
+  '• Stakeholder Engagement',
+  '• Customer Service',
+  '• Administrative Coordination',
+  '• Statistical Analysis',
+  '• Data Reporting & Visualisation',
+  '• Research & Survey Analysis',
+  '• LMS Administration',
+  '• AI Productivity & Workflow Improvement',
+  '• Digital Consulting',
+  '• Social Media & Community Management',
+  '• Website Design & Deployment'
 ];
-doc.fontSize(9.5).font('Helvetica');
+doc.fontSize(8.5).font('Helvetica');
 for (let i = 0; i < competencies.length; i += 2) {
-  const comp1 = competencies[i].padEnd(50, ' ');
+  const comp1 = (competencies[i] || '').padEnd(46, ' ');
   const comp2 = competencies[i + 1] || '';
   doc.text(`${comp1}   ${comp2}`);
 }
@@ -49,122 +52,124 @@ doc.moveDown();
 doc.fontSize(12).font('Helvetica-Bold').text('PROFESSIONAL EXPERIENCE', { underline: true });
 doc.moveDown(0.5);
 
-// Job 1
-doc.fontSize(10.5).font('Helvetica-Bold').text('Freelance Digital Consultant / Founder', { continued: true });
-doc.font('Helvetica').text(' | Henalo Digital Enterprise', { continued: true });
-doc.font('Helvetica-Bold').text(' (Nov 2025 – Present)');
-doc.fontSize(9).font('Helvetica').text(
-  '• Develop and deploy professional portfolio websites for industry clients and executives, managing the full development lifecycle from AI-assisted design to live hosting on Vercel.\n' +
-  '• Provide comprehensive virtual assistant services including calendar management, inbox management, CRM updates, and spreadsheet maintenance for remote clients across multiple industries.\n' +
-  '• Leverage AI tools including ChatGPT, Gemini, and Microsoft 365 (M365) for rapid administrative scaling, high-quality content generation, and seamless digital project execution.\n' +
-  '• Optimize executive CVs, branding documents, and professional portfolios, successfully helping clients secure actionable career results and improve market visibility.',
-  { lineGap: 1.5 }
-);
-doc.moveDown(0.8);
-
-// Job 2
-doc.fontSize(10.5).font('Helvetica-Bold').text('Training Support Staff', { continued: true });
+// Hommaston 1
+doc.fontSize(10).font('Helvetica-Bold').text('Training Support Staff — Full-Time', { continued: true });
 doc.font('Helvetica').text(' | Hommaston Limited, Lagos', { continued: true });
 doc.font('Helvetica-Bold').text(' (Jan 2026 – Present)');
-doc.fontSize(9).font('Helvetica').text(
-  '• Conducted a comprehensive department-by-department AI needs assessment for a team of 23 staff members to develop a 90-day strategic rollout plan for digital efficiency using ChatGPT and M365 Copilot.\n' +
-  '• Manage executive calendars, coordinate meeting schedules, and maintain organized digital filing systems to ensure seamless daily operations.\n' +
-  '• Handle inbox management and coordinate complex communication between cross-functional teams and users to ensure smooth service delivery and seamless onboarding processes.\n' +
-  '• Maintain accurate CRM records, operational databases, and system updates, ensuring complete quality assurance and data integrity.',
+doc.fontSize(8.5).font('Helvetica').text(
+  '• Coordinate training operations, including participant onboarding, scheduling, LMS administration, assessments, attendance, documentation, reporting and post-training support.\n' +
+  '• Contribute to the delivery of more than 100 training sessions or programmes through participant onboarding, learning-platform administration, assessments and operational coordination.\n' +
+  '• Prepare programme trackers, reports, presentations, learning materials and business documents using Microsoft 365 and Google Workspace.\n' +
+  '• Deliver Microsoft Office and digital productivity training; facilitate introductory UI/UX sessions covering design principles, user experience concepts, research basics and digital design tools.\n' +
+  '• Conducted an AI needs assessment across a 23-member workforce and contributed to a 90-day AI and productivity adoption roadmap.\n' +
+  '• Support AI adoption and workflow improvement through practical use of ChatGPT, Google Gemini, Microsoft Copilot, and related productivity tools.\n' +
+  '• Introduced the Jobberman-hosted Mastercard Foundation Associates Programme opportunity to management, contributing to Hommaston\'s participation and Associate allocation.\n' +
+  '• Awarded "Most Outstanding Intern (2025)" — Hommaston Limited, before transitioning into full-time employment.',
   { lineGap: 1.5 }
 );
-doc.moveDown(0.8);
+doc.moveDown(0.5);
 
-// Job 3
-doc.fontSize(10.5).font('Helvetica-Bold').text('Project Support Intern — NCDMB Project 350 Lead', { continued: true });
+// Hommaston 2
+doc.fontSize(10).font('Helvetica-Bold').text('Project Support Intern / Lagos Training Coordinator — NCDMB Project 350', { continued: true });
 doc.font('Helvetica').text(' | Hommaston Limited, Lagos', { continued: true });
 doc.font('Helvetica-Bold').text(' (Aug 2025 – Dec 2025)');
-doc.fontSize(9).font('Helvetica').text(
-  '• Served as the program lead in Lagos for the "NCDMB Project 350," ensuring seamless execution, logistical coordination, and stakeholder alignment.\n' +
-  '• Managed complex executive schedules, coordinated meeting logistics, and maintained organized spreadsheet-based tracking systems for participant data and program milestones.\n' +
-  '• Maintained organized, data-driven records and tracked participant information to measure and report on program effectiveness.',
+doc.fontSize(8.5).font('Helvetica').text(
+  '• Coordinated approximately 3–5 training programmes, managing participant and facilitator communication, logistics, attendance, schedules and daily training activities.\n' +
+  '• Maintained programme trackers, records, documentation and reports to support project monitoring and accountability.\n' +
+  '• Provided training coordination support for programmes delivered in Lagos and other states, helping resolve operational issues and keep activities on schedule.',
   { lineGap: 1.5 }
 );
-doc.moveDown(0.8);
+doc.moveDown(0.5);
 
-// Job 4
-doc.fontSize(10.5).font('Helvetica-Bold').text('Training Intern', { continued: true });
+// Hommaston 3
+doc.fontSize(10).font('Helvetica-Bold').text('Training Intern', { continued: true });
 doc.font('Helvetica').text(' | Hommaston Limited, Lagos', { continued: true });
-doc.font('Helvetica-Bold').text(' (Sept 2024 – Dec 2024)');
-doc.fontSize(9).font('Helvetica').text(
-  '• Supported daily administrative operations and provided rapid response to participant inquiries during early training cohorts.\n' +
-  '• Assisted senior training staff with digital documentation and the smooth delivery of organizational learning objectives.',
+doc.font('Helvetica-Bold').text(' (Sep 2024 – Dec 2024)');
+doc.fontSize(8.5).font('Helvetica').text(
+  '• Administered learner onboarding, participant communication, attendance records, assessments, LMS updates and training logistics.\n' +
+  '• Prepared digital documentation and supported facilitators and senior training staff in day-to-day programme delivery.',
   { lineGap: 1.5 }
 );
-doc.moveDown(0.8);
+doc.moveDown(0.5);
 
-// Job 5
-doc.fontSize(10.5).font('Helvetica-Bold').text('Sales Branch Manager', { continued: true });
-doc.font('Helvetica').text(' | Great Lots Nigeria Limited', { continued: true });
-doc.font('Helvetica-Bold').text(' (Sept 2019 – June 2021)');
-doc.fontSize(9).font('Helvetica').text(
-  '• Supervised full-cycle sales operations and coordinated branch staff, successfully managing a branch that generated over NGN 10,000,000 in revenue.\n' +
-  '• Managed escalated customer interactions and implemented robust complaint resolution strategies, ensuring high customer satisfaction and retention.\n' +
-  '• Maintained comprehensive sales databases and monitored complex inventory levels to guarantee optimal branch performance.',
+// Henalo
+doc.fontSize(10).font('Helvetica-Bold').text('Founder & Freelance Digital Consultant', { continued: true });
+doc.font('Helvetica').text(' | Henalo Digital Enterprise, Lagos', { continued: true });
+doc.font('Helvetica-Bold').text(' (2025 – Present)');
+doc.fontSize(8.5).font('Helvetica').text(
+  '• Designed and deployed 5+ websites for individuals and businesses, translating client requirements into digital solutions from concept through implementation.\n' +
+  '• Created ATS-focused CVs, professional profiles, portfolios and career documents for clients.\n' +
+  '• Produced brand identities and marketing assets — including logos, flyers, banners and business documents — for SMEs.\n' +
+  '• Provide digital consulting across website development, branding, AI productivity, business documentation and workflow improvement.\n' +
+  '• Build AI-assisted productivity workflows using ChatGPT, Google Gemini, Microsoft Copilot and Google Workspace.',
   { lineGap: 1.5 }
 );
-doc.moveDown(0.8);
+doc.moveDown(0.5);
 
-// Job 6
-doc.fontSize(10.5).font('Helvetica-Bold').text('Salesperson', { continued: true });
-doc.font('Helvetica').text(' | Topguide Electrical Company', { continued: true });
+// FeedCore
+doc.fontSize(10).font('Helvetica-Bold').text('Business Operations & Digital Development', { continued: true });
+doc.font('Helvetica').text(' | FeedCore Agro Limited, Lagos', { continued: true });
+doc.font('Helvetica-Bold').text(' (2026 – Present)');
+doc.fontSize(8.5).font('Helvetica').text(
+  '• Supported CAC incorporation and business documentation, helping establish the company\'s operational and digital foundations.\n' +
+  '• Developed brand identity and marketing materials, including logos, flyers, banners, signboards and promotional content.\n' +
+  '• Set up the company\'s Google Business Profile and online business presence; created customer-facing materials and digital templates.\n' +
+  '• Maintain and organise inventory, purchasing, sales and administrative records using spreadsheets and business documents.',
+  { lineGap: 1.5 }
+);
+doc.moveDown(0.5);
+
+// Great Lots
+doc.fontSize(10).font('Helvetica-Bold').text('Branch Sales Manager', { continued: true });
+doc.font('Helvetica').text(' | Great Lots Nigeria Limited, Lagos', { continued: true });
+doc.font('Helvetica-Bold').text(' (Sep 2019 – Jun 2021)');
+doc.fontSize(8.5).font('Helvetica').text(
+  '• Managed day-to-day branch sales activities, customer enquiries and complaints, and customer relationship follow-up.\n' +
+  '• Coordinated branch operations, monitored inventory and maintained sales and operational records.\n' +
+  '• Worked with staff to support sales objectives and resolve customer and business issues.',
+  { lineGap: 1.5 }
+);
+doc.moveDown(0.5);
+
+// Topguide
+doc.fontSize(10).font('Helvetica-Bold').text('Salesperson', { continued: true });
+doc.font('Helvetica').text(' | Topguide Electrical Company, Lagos', { continued: true });
 doc.font('Helvetica-Bold').text(' (May 2017 – Jan 2018)');
-doc.fontSize(9).font('Helvetica').text(
-  '• Assisted customers in selecting products and provided expert support during purchase decisions.\n' +
-  '• Handled customer inquiries professionally and ensured positive service experiences, contributing directly to targeted branch sales.',
+doc.fontSize(8.5).font('Helvetica').text(
+  '• Guided customers in selecting electrical products based on requirements and budget, explaining product features and specifications.\n' +
+  '• Handled customer enquiries, supported purchasing decisions and maintained positive customer relationships.',
   { lineGap: 1.5 }
 );
 doc.moveDown();
 
-// Key Projects
-doc.fontSize(12).font('Helvetica-Bold').text('KEY TECHNICAL & ACADEMIC PROJECTS', { underline: true });
+// Leadership
+doc.fontSize(12).font('Helvetica-Bold').text('LEADERSHIP & COMMUNITY EXPERIENCE', { underline: true });
 doc.moveDown(0.3);
-doc.fontSize(9.5).font('Helvetica-Bold').text('Digital Tax Workflow Automation');
-doc.fontSize(9).font('Helvetica').text('• Created a comprehensive digital tax workflow with an assigned team as part of a rigorous group assignment for a Business Analytics certification.');
-doc.fontSize(9.5).font('Helvetica-Bold').text('"Life After School" Program');
-doc.fontSize(9).font('Helvetica').text('• Led and executed a high-impact university-wide career preparation program (June 2026) that successfully equipped graduating students with practical career skills, professional networking strategies, and workplace readiness tools. The program was delivered on schedule and received strong positive feedback from participants and faculty.');
-doc.fontSize(9.5).font('Helvetica-Bold').text('Educational Planning in Tertiary Institutions');
-doc.fontSize(9).font('Helvetica').text('• Developed a statistical framework applying Moving Average methods for accurate student enrollment forecasting.');
-doc.moveDown();
-
-// Leadership & Community Engagement
-doc.fontSize(12).font('Helvetica-Bold').text('LEADERSHIP & COMMUNITY ENGAGEMENT', { underline: true });
-doc.moveDown(0.3);
-doc.fontSize(10).font('Helvetica-Bold').text('Special Adviser — Media & Publicity', { continued: true });
-doc.font('Helvetica').text(' | NASS, LASUED (2024 – 2026)');
-doc.fontSize(9).font('Helvetica').text('• Oversaw comprehensive digital communication strategies, coordinating high-impact publicity efforts and digital engagement for association initiatives through the completion of the administrative term.');
-doc.fontSize(10).font('Helvetica-Bold').text('Media Team Lead', { continued: true });
-doc.font('Helvetica').text(' | Science Tech Summit (STS), LASUED (2023 – 2026)');
-doc.fontSize(9).font('Helvetica').text('• Developed and executed cross-channel media strategies that successfully drove event growth, scaling audience engagement from 500+ participants in the inaugural edition to over 1,500+ attendees by the fourth consecutive technology summit (1st – 4th Editions).');
-doc.fontSize(10).font('Helvetica-Bold').text('Public Relations Officer (PRO)', { continued: true });
-doc.font('Helvetica').text(' | NASS, LASUED (2022 – 2024)');
-doc.fontSize(9).font('Helvetica').text('• Managed critical communication channels between the association and its members, building and maintaining professional relationships with external stakeholders and partners.');
+doc.fontSize(9.5).font('Helvetica-Bold').text('Special Adviser — Publicity & Media', { continued: true });
+doc.font('Helvetica').text(' | NASS LASUED (2025 – 2026)');
+doc.fontSize(8.5).font('Helvetica').text('• Advised executive leadership on publicity, branding, media and communication strategy for association programmes and partnerships.');
+doc.fontSize(9.5).font('Helvetica-Bold').text('Pioneer Public Relations Officer (PRO)', { continued: true });
+doc.font('Helvetica').text(' | NASS LASUED (2023 – 2025)');
+doc.fontSize(8.5).font('Helvetica').text('• Helped develop NASS LASUED\'s first constitution and managed communications for a community of 3,000+ students.\n• Coordinated publicity campaigns, social media communication and stakeholder-facing information.');
+doc.fontSize(9.5).font('Helvetica-Bold').text('Media Team Lead', { continued: true });
+doc.font('Helvetica').text(' | Science Tech Summit (STS), LASUED (2023 – 2026, 1st – 4th Edition)');
+doc.fontSize(8.5).font('Helvetica').text('• Led content creation, event publicity, social media communication and media coverage across four summit editions.\n• Contributed to audience growth from 500+ participants to 1,500+ attendees across summit editions.');
 doc.moveDown();
 
 // Education
 doc.fontSize(12).font('Helvetica-Bold').text('EDUCATION', { underline: true });
 doc.moveDown(0.3);
-doc.fontSize(9.5).text('• Bachelor of Science (B.Sc.) – Business Administration | University of the People (Online) | In Progress');
-doc.text('• Bachelor of Science (B.Sc.) – Statistics | Lagos State University of Education (LASUED)');
+doc.fontSize(9).text('• Bachelor of Science (B.Sc.) – Statistics | Lagos State University of Education (LASUED) | Completed');
+doc.text('• Bachelor of Science (B.Sc.) – Business Administration | University of the People (Online) | In Progress');
 doc.moveDown();
 
-// Certifications & Awards
-doc.fontSize(12).font('Helvetica-Bold').text('CERTIFICATIONS & AWARDS', { underline: true });
+// Professional Certifications
+doc.fontSize(12).font('Helvetica-Bold').text('PROFESSIONAL CERTIFICATIONS', { underline: true });
 doc.moveDown(0.3);
-doc.fontSize(9.5).text('• Business Analyst — TechCrunch ACTD Certified');
-doc.text('• Front-End Web Development');
-doc.text('• Financial Literacy & Digital Skills');
-doc.text('• Google Digital Marketing Certification');
-doc.text('• ALX AI Career Essentials');
+doc.fontSize(9).text('• Certified Business Analyst (ACTD) — TechCrush');
+doc.text('• AI Career Essentials (AICE) — ALX Africa');
+doc.text('• Google AI Prompting Essentials — Google');
+doc.text('• Google Digital Marketing Certification — Google');
 doc.text('• Data Literacy — DataCamp');
-doc.moveDown(0.3);
-doc.fontSize(9.5).font('Helvetica-Bold').text('Awards:');
-doc.font('Helvetica').text('• Most Outstanding Intern (2025) — Hommaston Limited');
-doc.text('• Man of the Year (2023) — Nigerian Association of Science Students (LASUED)');
 
 doc.end();

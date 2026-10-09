@@ -3,13 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alozie Onyedikachi Henry | Business Analyst</title>
-    <meta name="description" content="Portfolio of Alozie Onyedikachi Henry - Business Analyst, Training Operations Specialist, and Digital Strategist.">
+    <title>Alozie Onyedikachi Henry | Business Operations, Programme Coordination & Data Solutions</title>
+    <meta name="description" content="Portfolio of Alozie Onyedikachi Henry — Business Operations, Programme Coordination, Data Analytics, and Founder of Henalo Digital Enterprise.">
+    <meta property="og:title" content="Alozie Onyedikachi Henry | Professional Portfolio">
+    <meta property="og:description" content="Business Operations, Programme Coordination, Data Analytics and Digital Solutions by Alozie Onyedikachi Henry.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://alozie-onyedikachi-henry.vercel.app/">
     
-    <!-- Google Fonts -->
+    <!-- Google Fonts: Inter & Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -18,29 +22,35 @@
         theme: {
           extend: {
             fontFamily: {
-              sans: ['Inter', 'sans-serif'],
+              sans: ['Inter', 'system-ui', 'sans-serif'],
+              display: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
             },
             colors: {
               navy: {
-                800: '#1e3a8a', // Custom Navy adjustments if needed
-                900: '#0f172a', // Slate 900 acts as a great deep navy
+                950: '#0A1826',
+                900: '#102A43',
+                800: '#1A3B5C',
+                700: '#244D76',
+                600: '#33618D',
               },
-              gold: {
-                500: '#eab308',
-              }
-            },
-            animation: {
-              'scroll': 'scroll 25s linear infinite',
-              'subtle-bounce': 'subtle-bounce 1s infinite',
-            },
-            keyframes: {
-              scroll: {
-                '0%': { transform: 'translateX(0)' },
-                '100%': { transform: 'translateX(-50%)' },
+              teal: {
+                800: '#0F5752',
+                700: '#126B64',
+                600: '#167D75', // Brand Accent
+                500: '#1F9990',
+                400: '#2DB5AB',
+                100: '#E6F4F3',
+                50: '#F0F9F8',
               },
-              'subtle-bounce': {
-                '0%, 100%': { transform: 'translateY(-15%)', animationTimingFunction: 'cubic-bezier(0.8, 0, 1, 1)' },
-                '50%': { transform: 'translateY(0)', animationTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)' },
+              cool: {
+                white: '#F2F5F8',
+                50: '#F8FAFC',
+                100: '#EDF2F7',
+              },
+              slate: {
+                border: '#DCE4EA',
+                text: '#263746',
+                muted: '#627D98',
               }
             }
           }
@@ -49,22 +59,21 @@
     </script>
 
     <style>
-      /* Custom scrollbar for a premium feel */
+      /* Custom scrollbar */
       ::-webkit-scrollbar {
         width: 8px;
       }
       ::-webkit-scrollbar-track {
-        background: #f1f5f9;
+        background: #F2F5F8;
       }
       ::-webkit-scrollbar-thumb {
-        background: #94a3b8;
+        background: #CBD5E1;
         border-radius: 4px;
       }
       ::-webkit-scrollbar-thumb:hover {
-        background: #64748b;
+        background: #94A3B8;
       }
       
-      /* Utility for hiding scrollbar but allowing scroll */
       .no-scrollbar::-webkit-scrollbar {
         display: none;
       }
@@ -83,9 +92,8 @@
   }
 }
 </script>
-<link rel="stylesheet" href="/index.css">
 </head>
-  <body class="bg-white text-slate-800 antialiased">
+  <body class="bg-[#F2F5F8] text-[#263746] antialiased selection:bg-[#167D75] selection:text-white">
     <div id="root"></div>
   <script type="module" src="/index.tsx"></script>
 </body>
