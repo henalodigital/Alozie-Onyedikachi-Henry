@@ -53,8 +53,8 @@ export const PERSONAL_INFO = {
   linkedin: "https://linkedin.com/in/henryalozie",
   liveUrl: "https://alozie-onyedikachi-henry.vercel.app/",
   cvUrl: "/Alozie_Onyedikachi_Henry_CV.pdf",
-  profileImage: "Confident Black Suit Studio Portrait.png",
-  profileImageFallback: "/profile.jpg",
+  profileImage: "/profile.png",
+  profileImageFallback: "",
   copyright: "© 2026 Alozie Onyedikachi Henry · Henalo Digital Enterprise"
 };
 
